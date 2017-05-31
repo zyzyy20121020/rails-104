@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :context, presence: true
+  scope :recent, -> { order("created_at DESC") }
 end
