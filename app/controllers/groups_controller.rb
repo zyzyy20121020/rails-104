@@ -26,6 +26,7 @@ class GroupsController < ApplicationController
 
     if @group.save
       redirect_to groups_path
+      current_user.join!(@group)
     else
       render :new
     end
